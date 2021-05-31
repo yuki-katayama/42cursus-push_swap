@@ -1,0 +1,3 @@
+ft_medianの第三引数目の意味を知る
+
+sort_fiveでssの最適化ができる。
