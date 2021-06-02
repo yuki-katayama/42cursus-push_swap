@@ -16,7 +16,6 @@ SRCNAME	=	ft_atoi.c \
 			ft_isdigit.c \
 			ft_malloc_p.c \
 			ft_split.c \
-			ft_lstsize.c \
 			ft_free_int.c \
 			ft_free_char.c \
 			ft_strncmp.c \

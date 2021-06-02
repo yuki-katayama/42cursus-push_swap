@@ -14,10 +14,13 @@ VALFLAGS = --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all -
 
 SRCNAME	=	push_swap \
 			error_check \
-			sort_two_or_three \
+			sort_two \
+			sort_three \
 			sort_four \
 			sort_five \
 			sort_six \
+			sort_under_five \
+			sort_over_five \
 			utils \
 			clear \
 			start \

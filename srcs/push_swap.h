@@ -22,36 +22,49 @@ void	ft_s_s(t_list **stack_a, t_list **stack_b, char *str);
 void	ft_p(t_list **stack_a, t_list **stack_b, char *str);
 
 //check
-int	ft_check_arg(int size, char **argv, t_list **stack_a, int **nums);
+int		ft_check_arg(int size, char **argv, t_list **stack_a, int **nums);
 
-//sort_two_ore_three
-void 	ft_sort_two(t_list **stack, char *str);
+//ft_sort_two
+void ft_sort_two(t_list **stack, char *str);
+
+//ft_sort_three
 void	ft_sort_three_a(t_list **stack_a);
 void	ft_sort_three_b(t_list **stack_b);
 
-//sort_four
-void	ft_sort_four(t_list **stack_a, t_list **stack_b);
+//ft_sort_four
+void	ft_sort_four_a(t_list **stack_a, t_list **stack_b);
+void	ft_sort_four_b(t_list **stack_a, t_list **stack_b);
 
-//sort_five
-void	ft_sort_five(t_list **stack_a, t_list **stack_b);
+//ft_sort_five
+void	ft_sort_five_a(t_list **stack_a, t_list **stack_b);
+void	ft_sort_five_b(t_list **stack_a, t_list **stack_b);
 
-//sort_six
+//ft_sort_six
 void	ft_sort_six(t_list **stack_a, t_list **stack_b);
 
+//sort_under_six
+void	ft_sort_under_five_b(t_list **a, t_list **b, int b_size);
+
+//sort_over_five
+int ft_sort_over_five(t_list **stack_a, t_list **stack_b, int size, int first);
+
 //utils
-int64_t ft_get_smallest(t_list **stack, int n);
+int64_t ft_get_smallest(t_list **stack, int size);
 int64_t ft_get_biggest(t_list **stack, int n);
-void	ft_push(t_list **a, t_list **b, int size);
+void	ft_push(t_list **a, t_list **b, int size, char *str);
 void	ft_push_rotate(t_list **a, t_list **b);
+void	ft_last_push_rotate(t_list **stack_a, t_list **stack_b, int size_a, int size_b);
+int		ft_get_half_size(int size);
 
 //crear
 void	clear_stack_nums(t_list *stack_a, int *nums);
 
 //start
-void ft_start_push_swap(t_list **stack_a, int size);
+void 	ft_start_push_swap(t_list **stack_a, int size);
 
 //median
-int	ft_get_median(t_list *stack_a, int n, int minus);
+int		ft_get_median(t_list *stack_a, int n, int minus);
+int		ft_get_m_median(t_list *stack_a, int n);
 
 
 #endif

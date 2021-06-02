@@ -11,15 +11,14 @@ typedef struct s_list
 }				t_list;
 
 long long int	ft_atoi(const char *str);
-int				ft_lstsize(t_list *lst);
 int				ft_malloc_p(void **p, size_t len);
 int				ft_malloc_pp(void ***p, size_t len);
 int				ft_isdigit(int c);
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
 void			ft_swap(int *a, int *b);
 void			*ft_free_char(char **word, int index);
-void	ft_free_int(int **ptr);
-void	ft_quick_sort(int *nums, int left, int right);
+void			ft_free_int(int **ptr);
+void			ft_quick_sort(int *nums, int left, int right);
 char			**ft_split(char const *s, char c);
 // t_list			*ft_lstnew(int content);
 // t_list			*ft_lstlast(t_list *lst);

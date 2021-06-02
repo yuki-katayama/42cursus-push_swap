@@ -6,13 +6,13 @@
 /*   By: kyuki <kyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:25:14 by kyuki             #+#    #+#             */
-/*   Updated: 2021/05/31 21:10:00 by kyuki            ###   ########.fr       */
+/*   Updated: 2021/06/02 13:10:20 by kyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int64_t ft_get_smallest(t_list **stack, int n)
+int64_t ft_get_smallest(t_list **stack, int size)
 {
 	int64_t smallest;
 	t_list *ptr;
@@ -21,7 +21,7 @@ int64_t ft_get_smallest(t_list **stack, int n)
 	i = 1;
 	smallest = (*stack)->content;
 	ptr = (*stack)->next;
-	while (i < n)
+	while (i < size)
 	{
 		if (smallest > ptr->content)
 			smallest = ptr->content;
@@ -50,11 +50,14 @@ int64_t ft_get_biggest(t_list **stack, int n)
 	return (biggest);
 }
 
-void	ft_push(t_list **stack_a, t_list **stack_b, int size)
+void	ft_push(t_list **stack_a, t_list **stack_b, int size, char *str)
 {
 	while (size > 0)
 	{
-		ft_p(stack_a, stack_b, "pa");
+		if (ft_strncmp(str, "pa", 3) == 0)
+			ft_p(stack_a, stack_b, "pa");
+		else if ((ft_strncmp(str, "pb", 3) == 0))
+			ft_p(stack_b, stack_a, "pb");
 		size--;
 	}
 }
@@ -108,4 +111,12 @@ void ft_last_push_rotate(t_list **stack_a, t_list **stack_b, int size_a, int siz
 		}
 		count++;
 	}
+}
+
+int	ft_get_half_size(int size)
+{
+	if (size % 2 == 0)
+		return (size / 2);
+	else
+		return (size / 2 + 1);
 }

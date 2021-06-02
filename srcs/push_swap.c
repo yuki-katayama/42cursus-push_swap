@@ -54,7 +54,6 @@ int main(int ac, char **av)
 		// void	clear_argv(char **argv)
 		return (ERROR);
 	}
-	printf("size = %d\n", size);
 	if (size >= 2)
 		ft_start_push_swap(&stack_a, size);
 

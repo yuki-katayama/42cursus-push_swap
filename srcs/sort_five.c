@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void ft_sort_five(t_list **stack_a, t_list **stack_b)
+void ft_sort_five_a(t_list **stack_a, t_list **stack_b)
 {
 	int median;
 	int i;
@@ -19,26 +19,17 @@ void ft_sort_five(t_list **stack_a, t_list **stack_b)
 	}
 	ft_sort_three_a(stack_a);
 	ft_sort_two(stack_b, "sb");
-	// i = 0;
-	// t_list *ptr;
-	// ptr = (*stack_a)->next;
-	// puts("-------a-----------");
-	// printf("%d\n", (*stack_a)->content);
-	// while ((*stack_a) != ptr)
-	// {
-	// 	printf("%d\n", ptr->content);
-	// 	ptr = ptr->next;
-	// }
-	// puts("-------b-----------");
-	// if ((*stack_b) != NULL)
-	// {
-	// 	printf("%d\n", (*stack_b)->content);
-	// 	ptr = (*stack_b)->next;
-	// 	while ((*stack_b) != ptr)
-	// 	{
-	// 		printf("%d\n", ptr->content);
-	// 		ptr = ptr->next;
-	// 	}
-	// }
 	ft_push_rotate(stack_a, stack_b);
+}
+
+void	ft_sort_five_b(t_list **stack_a, t_list **stack_b)
+{
+	int	a_size;
+	int	b_size;
+
+	a_size = 2;
+	b_size = 3;
+	ft_sort_three_a(stack_a);
+	ft_sort_two(stack_b, "sb");
+	ft_last_push_rotate(stack_a, stack_b, a_size, b_size);
 }

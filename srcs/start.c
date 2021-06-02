@@ -6,7 +6,7 @@
 /*   By: kyuki <kyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:42:21 by kyuki             #+#    #+#             */
-/*   Updated: 2021/05/31 18:22:33 by kyuki            ###   ########.fr       */
+/*   Updated: 2021/06/02 16:39:23 by kyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,11 @@ void ft_start_push_swap(t_list **stack_a, int size)
 	else if (size == 3)
 		ft_sort_three_a(stack_a);
 	else if (size == 4)
-		ft_sort_four(stack_a, &stack_b);
+		ft_sort_four_a(stack_a, &stack_b);
 	else if (size == 5)
-		ft_sort_five(stack_a, &stack_b);
+		ft_sort_five_a(stack_a, &stack_b);
 	else if (size == 6)
 		ft_sort_six(stack_a, &stack_b);
+	else if (size > 5)
+		ft_sort_over_five(stack_a, &stack_b, size, 1);
 }

@@ -1,3 +1,7 @@
 ft_medianの第三引数目の意味を知る
 
+ft_split_median_aでrrの最適化が多分できる。
+
+
+
 sort_fiveでssの最適化ができる。

@@ -1,27 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   sort_two_or_three.c                                :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kyuki <kyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/31 02:24:15 by kyuki             #+#    #+#             */
-/*   Updated: 2021/05/31 18:18:23 by kyuki            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
-
-void ft_sort_two(t_list **stack, char *str)
-{
-	if ((*stack)->content > (*stack)->next->content)
-	{
-		if (ft_strncmp(str, "sa", 3) == 0)
-			ft_s(stack, "sa");
-		else
-			ft_s(stack, "sb");
-	}
-}
 
 void	ft_sort_three_a(t_list **stack_a)
 {
