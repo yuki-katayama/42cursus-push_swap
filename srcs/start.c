@@ -6,15 +6,16 @@
 /*   By: kyuki <kyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:42:21 by kyuki             #+#    #+#             */
-/*   Updated: 2021/06/02 16:39:23 by kyuki            ###   ########.fr       */
+/*   Updated: 2021/06/05 13:06:00 by kyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int ft_check_sorted(t_list *stack)
+static int	ft_check_sorted(t_list *stack)
 {
-	t_list *ptr;
+	t_list	*ptr;
+
 	ptr = stack;
 	while (ptr->next != stack)
 	{
@@ -26,9 +27,10 @@ static int ft_check_sorted(t_list *stack)
 	return (1);
 }
 
-void ft_start_push_swap(t_list **stack_a, int size)
+void	ft_start_push_swap(t_list **stack_a, int size)
 {
-	t_list *stack_b;
+	t_list	*stack_b;
+
 	stack_b = NULL;
 	if (ft_check_sorted(*stack_a))
 		return ;

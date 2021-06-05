@@ -22,10 +22,15 @@ SRCNAME	=	push_swap \
 			sort_six \
 			sort_under_five \
 			sort_over_five \
+			sort_over_five_utils \
+			sort_over_five_rec \
 			utils \
+			push_rotate \
+			proceed_if \
 			clear \
 			start \
 			median \
+			split_median \
 			ft_lstadd_back_ps \
 			ft_lstlast_ps \
 			ft_lstnew_ps \

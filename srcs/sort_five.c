@@ -1,9 +1,9 @@
 #include "push_swap.h"
 
-void ft_sort_five_a(t_list **stack_a, t_list **stack_b)
+void	ft_sort_five_a(t_list **stack_a, t_list **stack_b)
 {
-	int median;
-	int i;
+	int	median;
+	int	i;
 
 	median = ft_get_median(*stack_a, 5, 1);
 	i = 0;

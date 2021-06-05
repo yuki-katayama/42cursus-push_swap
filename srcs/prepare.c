@@ -26,7 +26,7 @@ void	ft_define_size_array(int ac, char ***argv, char **av, int *size)
 
 int	ft_prepare_nums(int size, char **argv, t_list **stack_a, int **nums)
 {
-	if (!(ft_malloc_pp((void***)nums, sizeof(int) * (size + 1))))
+	if (!(ft_malloc_pp((void ***)nums, sizeof(int) * (size + 1))))
 		return (ERROR);
 	if ((ft_check_arg(size, argv, stack_a, nums)))
 	{
@@ -34,5 +34,5 @@ int	ft_prepare_nums(int size, char **argv, t_list **stack_a, int **nums)
 		clear_stack_nums(*stack_a, *nums);
 		return (1);
 	}
-	return(SUCCESS);
+	return (SUCCESS);
 }

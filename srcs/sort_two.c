@@ -6,13 +6,13 @@
 /*   By: kyuki <kyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 15:46:26 by kyuki             #+#    #+#             */
-/*   Updated: 2021/06/02 15:46:34 by kyuki            ###   ########.fr       */
+/*   Updated: 2021/06/05 13:40:53 by kyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_sort_two(t_list **stack, char *str)
+void	ft_sort_two(t_list **stack, char *str)
 {
 	if ((*stack)->content > (*stack)->next->content)
 	{
