@@ -47,3 +47,38 @@ void	ft_sort_three_b(t_list **stack_b)
 		ft_rr(stack_b, "rrb");
 	}
 }
+
+void ft_sort_three(t_list **stack_a, t_list **stack_b)
+{
+	ft_p(stack_b, stack_a, "pb");
+	if ((*stack_a)->content < (*stack_a)->next->content)
+		ft_r(stack_a, "ra");
+	else
+	{
+		ft_s(stack_a, "sa");
+		ft_r(stack_a, "ra");
+	}
+	if ((*stack_a)->content < (*stack_b)->content)
+	{
+		ft_r(stack_a, "ra");
+		ft_p(stack_a, stack_b, "pa");
+		ft_r(stack_a, "ra");
+	}
+	else
+	{
+		ft_p(stack_a, stack_b, "pa");
+		ft_rotate(stack_a, 2, "ra");
+	}
+}
+
+void	ft_sort_three_over(t_list **stack_a, t_list **stack_b)
+{
+	int	a_size;
+	int	b_size;
+
+	if ((*stack_a)->content > (*stack_a)->next->content)
+		ft_s(stack_a, "sa");
+	a_size = 2;
+	b_size = 1;
+	ft_last_push_rotate(stack_a, stack_b, a_size, b_size);
+}

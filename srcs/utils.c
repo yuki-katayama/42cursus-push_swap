@@ -6,7 +6,7 @@
 /*   By: kyuki <kyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:25:14 by kyuki             #+#    #+#             */
-/*   Updated: 2021/06/02 13:10:20 by kyuki            ###   ########.fr       */
+/*   Updated: 2021/06/02 21:53:30 by kyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,21 @@ void	ft_push(t_list **stack_a, t_list **stack_b, int size, char *str)
 	}
 }
 
+void	ft_rotate(t_list **stack, int size, char *str)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		if (ft_strncmp(str, "ra", 3) == 0)
+			ft_r(stack, "ra");
+		else if (ft_strncmp(str, "rb", 3) == 0)
+			ft_r(stack, "rb");
+		i++;
+	}
+}
+
 void	ft_push_rotate(t_list **stack_a, t_list **stack_b)
 {
 	while (*stack_b)
@@ -111,6 +126,30 @@ void ft_last_push_rotate(t_list **stack_a, t_list **stack_b, int size_a, int siz
 		}
 		count++;
 	}
+}
+
+int ft_push_b_check_small(t_list **stack_a, t_list **stack_b, int size, int count)
+{
+	int i;
+	int new_size;
+	int smallest;
+
+	i = 1;
+	new_size = size;
+	smallest = ft_get_smallest(stack_a, size);
+	ft_p(stack_b, stack_a, "pb");
+	while (i < count)
+	{
+		if ((*stack_a)->content == smallest)
+		{
+			ft_r(stack_a, "ra");
+			new_size--;
+		}
+		else
+			ft_p(stack_b, stack_a, "pb");
+		i++;
+	}
+	return (new_size);
 }
 
 int	ft_get_half_size(int size)

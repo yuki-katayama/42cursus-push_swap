@@ -24,12 +24,12 @@ void ft_sort_five_a(t_list **stack_a, t_list **stack_b)
 
 void	ft_sort_five_b(t_list **stack_a, t_list **stack_b)
 {
-	int	a_size;
-	int	b_size;
+	int	size_a;
+	int	size_b;
 
-	a_size = 2;
-	b_size = 3;
-	ft_sort_three_a(stack_a);
-	ft_sort_two(stack_b, "sb");
-	ft_last_push_rotate(stack_a, stack_b, a_size, b_size);
+	size_a = 2;
+	size_b = 3;
+	ft_sort_two(stack_a, "sa");
+	ft_sort_three_b(stack_b);
+	ft_last_push_rotate(stack_a, stack_b, size_a, size_b);
 }

@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyuki <kyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/11 03:02:15 by kyuki             #+#    #+#             */
-/*   Updated: 2020/10/11 03:02:17 by kyuki            ###   ########.fr       */
+/*   Created: 2021/06/04 18:59:56 by kyuki             #+#    #+#             */
+/*   Updated: 2021/06/04 18:59:58 by kyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void ft_putnbr_fd(int num, int fd)
 {
-	new->next = *lst;
-	*lst = new;
+	if(num < 0)
+	{
+		num *= -1;
+		write(fd, "-", 1);
+	}
+    if (num > 9)
+        ft_putnbr_fd(num / 10, fd);
+    write(fd, &"0123456789"[num % 10], 1);
 }

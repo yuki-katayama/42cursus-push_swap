@@ -19,10 +19,10 @@ static void	ft_p2(t_list **stack_a, t_list *tmp, t_list *last)
 	}
 }
 
-void ft_p(t_list **stack_a, t_list **stack_b, char *str)
+void	ft_p(t_list **stack_a, t_list **stack_b, char *str)
 {
-	t_list *tmp;
-	t_list *last;
+	t_list	*tmp;
+	t_list	*last;
 
 	if (*stack_b == NULL)
 		return ;

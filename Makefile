@@ -13,6 +13,7 @@ VALGRIND = valgrind
 VALFLAGS = --leak-check=full --show-leak-kinds=all --errors-for-leak-kinds=all --error-exitcode=666
 
 SRCNAME	=	push_swap \
+			prepare \
 			error_check \
 			sort_two \
 			sort_three \

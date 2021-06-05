@@ -1,8 +1,7 @@
 #include "push_swap.h"
 
-void ft_rr(t_list **stack, char *str)
+void	ft_rr(t_list **stack, char *str)
 {
-	//rra
 	if (!((*stack) == NULL || (*stack)->next == NULL))
 		*stack = (*stack)->prev;
 	if (ft_strncmp(str, "rra", 4) == 0)

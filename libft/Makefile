@@ -20,7 +20,8 @@ SRCNAME	=	ft_atoi.c \
 			ft_free_char.c \
 			ft_strncmp.c \
 			ft_swap.c \
-			ft_quick_sort.c
+			ft_quick_sort.c \
+			ft_putnbr_fd.c
 
 SRCS	=	$(addprefix $(SRCDIR), $(SRCNAME))
 

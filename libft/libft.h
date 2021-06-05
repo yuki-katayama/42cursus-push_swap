@@ -1,7 +1,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdlib.h>
+#include <unistd.h>
 
 typedef struct s_list
 {
@@ -20,6 +20,9 @@ void			*ft_free_char(char **word, int index);
 void			ft_free_int(int **ptr);
 void			ft_quick_sort(int *nums, int left, int right);
 char			**ft_split(char const *s, char c);
+
+//print用
+void ft_putnbr_fd(int num, int fd);
 // t_list			*ft_lstnew(int content);
 // t_list			*ft_lstlast(t_list *lst);
 // void			ft_lstiter(t_list *lst);

@@ -25,3 +25,32 @@ void	ft_sort_under_five_b(t_list **stack_a, t_list **stack_b, int size_b)
 		ft_sort_five_b(stack_a, stack_b);
 	}
 }
+
+void	ft_sort_under_five_a(t_list **stack_a, t_list **stack_b, int size)
+{
+	size = ft_proceed_if_smallest_a(stack_a, size);
+	if (size == 2)
+	{
+		ft_s(stack_a, "sa");
+		ft_rotate(stack_a, size, "ra");
+	}
+	else if (size == 3)
+		ft_sort_three(stack_a, stack_b);
+	else if (size == 4)
+		ft_sort_four(stack_a, stack_b, size);
+	else if (size == 5)
+	{
+		size = ft_push_b_check_small(stack_a, stack_b, size, 3);
+		if (size == 5)
+			ft_sort_five_b(stack_a, stack_b);
+		else if (size == 4)
+			ft_sort_four_b(stack_a, stack_b);
+		else if (size == 3)
+			ft_sort_three_over(stack_a, stack_b);
+		else if (size == 2)
+		{
+			ft_sort_two(stack_a, "sa");
+			ft_rotate(stack_a, 2, "ra");
+		}
+	}
+}
