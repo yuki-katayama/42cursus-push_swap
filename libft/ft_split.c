@@ -6,7 +6,7 @@
 /*   By: kyuki <kyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/11 03:09:46 by kyuki             #+#    #+#             */
-/*   Updated: 2021/05/30 14:45:05 by kyuki            ###   ########.fr       */
+/*   Updated: 2021/06/20 18:44:44 by kyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 static int	check_if_sep(char c, char charset)
 {
-	int	i;
-
-	i = 0;
 	if (c == charset)
 		return (1);
 	return (0);

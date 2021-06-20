@@ -6,19 +6,19 @@
 /*   By: kyuki <kyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:15:30 by kyuki             #+#    #+#             */
-/*   Updated: 2021/06/05 12:57:05 by kyuki            ###   ########.fr       */
+/*   Updated: 2021/06/21 02:48:44 by kyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_parse_sign(const char *str, int *negative)
+static void	ft_parse_sign(const char **str, int *negative)
 {
-	if (*str == '+' || *str == '-')
+	if (**str == '+' || **str == '-')
 	{
-		if (*str == '-')
+		if (**str == '-')
 			(*negative) = (*negative) * -1;
-		str++;
+		(*str)++;
 	}
 }
 
@@ -32,7 +32,7 @@ static long long int	ft_atoi_ps(const char *str, int *err)
 	while (*str == '\t' || *str == '\v' || *str == '\n' \
 		|| *str == '\r' || *str == '\f' || *str == ' ')
 		str++;
-	ft_parse_sign(str, &negative);
+	ft_parse_sign(&str, &negative);
 	if (*str == '\0' || ft_isdigit(*str) == 0)
 		*err = 1;
 	while (*str >= '0' && *str <= '9')

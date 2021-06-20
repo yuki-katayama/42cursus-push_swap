@@ -52,7 +52,6 @@ int	ft_sort_over_five(t_list **stack_a, t_list **stack_b, int size, int first)
 		ft_sort_under_five_a(stack_a, stack_b, size);
 	else
 	{
-		puts("a");
 		i = ft_count_five_size(size);
 		if (!(ft_malloc_p((void **)&sizes_a, sizeof(int) + (i + 1))))
 			return (1);
