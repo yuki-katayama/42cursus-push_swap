@@ -5,9 +5,7 @@ int	ft_split_median_a(t_list **stack_a, t_list **stack_b, int size)
 	int	median;
 	int	split_size;
 	int	i;
-	// int m_median;
 
-	// m_median = ft_get_m_median(*stack_a, size);
 	median = ft_get_median(*stack_a, size, 1);
 	split_size = ft_get_half_size(size);
 	i = 0;
@@ -31,6 +29,18 @@ static void	ft_set_smallest(t_list **stack_b, int *smallest, \
 		*smallest = smallest_b;
 }
 
+static void	ft_split_median_b2(t_list **stack_a, t_list **stack_b, \
+								int *i, int median)
+{
+	if ((*stack_b)->content > median)
+	{
+		ft_p(stack_a, stack_b, "pa");
+		(*i)++;
+	}
+	else
+		ft_r(stack_b, "rb");
+}
+
 int	ft_split_median_b(t_list **stack_a, t_list **stack_b, \
 								int size, int *proceed)
 {
@@ -51,18 +61,12 @@ int	ft_split_median_b(t_list **stack_a, t_list **stack_b, \
 		{
 			ft_p(stack_a, stack_b, "pa");
 			ft_r(stack_a, "ra");
-			(*proceed)++;
-			ft_set_smallest(stack_b, &smallest, \
-				ft_get_smallest(stack_b, size), \
+			ft_set_smallest(stack_b, &smallest, ft_get_smallest(stack_b, size), \
 				ft_get_smallest(stack_a, (split_size - i)));
-		}
-		else if ((*stack_b)->content > median)
-		{
-			ft_p(stack_a, stack_b, "pa");
-			i++;
+			(*proceed)++;
 		}
 		else
-			ft_r(stack_b, "rb");
+			ft_split_median_b2(stack_a, stack_b, &i, median);
 	}
 	return (median);
 }

@@ -33,7 +33,7 @@ void	ft_p(t_list **stack_a, t_list **stack_b, char *str)
 	else
 	{
 		*stack_b = (*stack_b)->next;
-		(*stack_b)->prev =last;
+		(*stack_b)->prev = last;
 		last->next = *stack_b;
 	}
 	ft_p2(stack_a, tmp, last);

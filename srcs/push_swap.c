@@ -14,7 +14,6 @@ int	main(int ac, char **av)
 	argv_split = ft_define_size_array(ac, &argv, av, &size);
 	if (ft_prepare_nums(size, argv, &stack_a, &nums))
 	{
-		printf("%d : %d : %s\n", ac, size, argv[0]);
 		if (argv_split == 1)
 			ft_clear_argv(ac, argv);
 		return (ERROR);
