@@ -6,7 +6,7 @@
 /*   By: kyuki <kyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:38:43 by kyuki             #+#    #+#             */
-/*   Updated: 2021/06/05 12:57:24 by kyuki            ###   ########.fr       */
+/*   Updated: 2021/06/25 16:17:57 by kyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,26 @@ static void	ft_free_stack(t_list *stack)
 	stack = NULL;
 }
 
-void	clear_stack_nums(t_list *stack_a, int *nums)
+void	ft_clear_stack_nums(t_list *stack_a, int *nums)
 {
 	ft_free_stack(stack_a);
 	ft_free_int(&nums);
+}
+
+void	ft_clear_argv(int ac, char **argv)
+{
+	int	i;
+
+	i = 0;
+	if ((ac == 3) || ac == 2)
+	{
+		while (argv[i])
+		{
+			free(argv[i]);
+			argv[i] = NULL;
+			i++;
+		}
+		free(argv);
+		argv = NULL;
+	}
 }

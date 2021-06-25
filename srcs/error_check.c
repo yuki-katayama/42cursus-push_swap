@@ -6,7 +6,7 @@
 /*   By: kyuki <kyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 02:15:30 by kyuki             #+#    #+#             */
-/*   Updated: 2021/06/21 02:48:44 by kyuki            ###   ########.fr       */
+/*   Updated: 2021/06/25 16:29:08 by kyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,14 @@ int	ft_check_arg(int size, char **argv, t_list **stack_a, int **nums)
 			new = ft_lstnew_ps((*nums)[i]);
 			ft_lstadd_back_ps(stack_a, new);
 		}
-		if (err == 1)
-			return (1);
+		if (err == ERROR)
+		{
+			printf("err : %d\n", err);
+			return (ERROR);
+		}
 		if (ft_is_same_num(nums, i) == 1)
-			return (1);
+			return (ERROR);
 		i++;
 	}
-	return (0);
+	return (SUCCESS);
 }

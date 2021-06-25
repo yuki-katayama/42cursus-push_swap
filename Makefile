@@ -58,7 +58,7 @@ $(NAME) :	${OBJS}
 			@echo "\n\033[0;32mCompiling..."
 			$(MAKE) -C ./libft
 			cp ./libft/libft.a .
-			$(CC) ${OBJS} libft.a $(CFLAGS) -o ${NAME}
+			$(CC) ${OBJS} libft.a $(CFLAGS) -g -o ${NAME}
 			@echo "Complete\033[0m"
 
 .PHONY: san
@@ -66,7 +66,7 @@ san		:	${OBJS}
 			@echo "\n\033[0;32mCompiling..."
 			$(MAKE) -C ./libft
 			cp ./libft/libft.a .
-			$(CC) ${OBJS} -g -fsanitize=address libft.a $(CFLAGS) $(LXFLAGS) -o ${NAME}
+			$(CC) -g ${OBJS} -fsanitize=address libft.a $(CFLAGS) $(LXFLAGS) -o ${NAME}
 			@echo "Complete\033[0m"
 
 .PHONY: val
@@ -74,7 +74,7 @@ val		:	$(MLX) ${OBJS}
 			$(MAKE) -C ./libft
 			cp ./libft/libft.a .
 			$(CC) -g ${OBJS} libft.a $(CFLAGS) $(LXFLAGS) -o ${NAME}
-			$(VALGRIND) $(VALFLAGS) ./push_swap
+			$(VALGRIND) $(VALFLAGS) ./push_swap "-5 4 2 3 10 9 8 11 15"
 
 .PHONY: clean
 clean	:

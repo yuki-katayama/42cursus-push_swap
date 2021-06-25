@@ -8,7 +8,7 @@ int	ft_get_median(t_list *stack_a, int size, int minus)
 	int		median;
 
 	ptr = stack_a;
-	if (!(ft_malloc_p((void **)&nums, sizeof(int) * (size + 1))))
+	if (!(ft_malloc_p((void **)&nums, sizeof(int) * (size + 1) * 2)))
 		return (0);
 	nums[size] = 0;
 	i = 0;

@@ -53,7 +53,7 @@ int	ft_sort_over_five(t_list **stack_a, t_list **stack_b, int size, int first)
 	else
 	{
 		i = ft_count_five_size(size);
-		if (!(ft_malloc_p((void **)&sizes_a, sizeof(int) + (i + 1))))
+		if (!(ft_malloc_p((void **)&sizes_a, sizeof(int) * i + 1)))
 			return (1);
 		if (size > 5)
 		{

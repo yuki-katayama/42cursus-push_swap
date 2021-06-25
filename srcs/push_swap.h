@@ -7,7 +7,6 @@
 # include <unistd.h>
 # include "../libft/libft.h"
 # define ERROR 1
-# define WRITE 1
 # define EXIT 0
 # define SUCCESS 0
 
@@ -87,10 +86,11 @@ int		ft_proceed_if_smallest(t_list **stack_a, t_list **stack_b, int size);
 
 //prepare
 int		ft_prepare_nums(int size, char **argv, t_list **stack_a, int **nums);
-void	ft_define_size_array(int ac, char ***argv, char **av, int *size);
+int		ft_define_size_array(int ac, char ***argv, char **av, int *size);
 
 //crear
-void	clear_stack_nums(t_list *stack_a, int *nums);
+void	ft_clear_stack_nums(t_list *stack_a, int *nums);
+void	ft_clear_argv(int ac, char **argv);
 
 //start
 void	ft_start_push_swap(t_list **stack_a, int size);
