@@ -10,8 +10,7 @@ INCDIR	=	./libft
 
 SRCDIR	=	./
 
-SRCNAME	=	ft_atoi.c \
-			ft_malloc_p.c \
+SRCNAME	=	ft_malloc_p.c \
 			ft_malloc_pp.c \
 			ft_isdigit.c \
 			ft_malloc_p.c \

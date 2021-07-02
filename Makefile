@@ -1,5 +1,6 @@
 NAME	=	push_swap
 
+MV		= -mv
 CC		=	gcc
 
 CFLAGS	=	-Wall -Werror -Wextra
@@ -40,69 +41,75 @@ SRCNAME	=	push_swap \
 			ft_rr \
 			ft_p
 
-# BSRCNAME =	render_map \
-			draw
+ifeq ($(shell uname),Linux)
+	CHECKERURL = https://projects.intra.42.fr/uploads/document/document/3597/checker_linux -O
+	CHECKERNAME = checker_linux
+else
+	CHECKERURL = https://projects.intra.42.fr/uploads/document/document/3596/checker_Mac -O
+	CHECKERNAME = checker_Mac
+endif
 
 SRCS	=	$(addsuffix .c, $(addprefix srcs/, $(SRCNAME)))
 
-# BSRCS	=	$(addsuffix _bonus.c, $(addprefix bonus/, $(SRCNAME) $(BSRCNAME)))
-
 OBJS	=	$(SRCS:.c=.o)
 
-# BOBJS	=	$(BSRCS:.c=.o)
+
+
 
 .PHONY: all
-all		:	$(NAME)
+all	:	color $(NAME) ## Run compile
 
-$(NAME) :	${OBJS}
-			@echo "\n\033[0;32mCompiling..."
+color :
+		@echo "\n\033[0;32mpush_swap Compiling..."
+
+$(NAME) :	$(OBJS)
+			curl -O $(CHECKERURL)
+			$(MV) $(CHECKERNAME) checker
+			chmod a+x checker
 			$(MAKE) -C ./libft
 			cp ./libft/libft.a .
 			$(CC) ${OBJS} libft.a $(CFLAGS) -g -o ${NAME}
-			@echo "Complete\033[0m"
+			@echo "push_swap Complete\033[0m"
 
 .PHONY: san
-san		:	${OBJS}
-			@echo "\n\033[0;32mCompiling..."
+san	:	color ${OBJS} ## Run sanitize
 			$(MAKE) -C ./libft
 			cp ./libft/libft.a .
 			$(CC) -g ${OBJS} -fsanitize=address libft.a $(CFLAGS) $(LXFLAGS) -o ${NAME}
 			@echo "Complete\033[0m"
 
 .PHONY: val
-val		:	$(MLX) ${OBJS}
+val	:	color ${OBJS} ## Run valgrind
 			$(MAKE) -C ./libft
 			cp ./libft/libft.a .
 			$(CC) -g ${OBJS} libft.a $(CFLAGS) $(LXFLAGS) -o ${NAME}
 			$(VALGRIND) $(VALFLAGS) ./push_swap "-5 4 2 3 10 9 8 11 15"
 
 .PHONY: clean
-clean	:
+clean	:	## Remove object
 			@echo "\033[0;33mCleaning..."
 			$(RM) $(OBJS)
 			$(MAKE) clean -C ./libft
 			@echo "\033[0m"
 
 .PHONY: fclean
-fclean	:	clean
-			@echo "\033[0;33mRemoving executable..."
+fclean	:	clean ## Remove object and static
+			@echo "\033[0;35mRemoving executable..."
 			$(MAKE) fclean -C ./libft
-			$(RM) $(NAME) libft.a
+			$(RM) -R $(NAME) libft.a checker push_swap_tester
 			@echo "\033[0m"
 
 .PHONY: re
-re		:	fclean all
+re	:	fclean all ## Retry cmpiles
 
 .PHONY: test
-test	:
-			./push_swap 1 3 5 2 4 8 6
+test	:	## Display test script
+			@echo "\033[0;31mPlease delete single-quotation\033[0m"
+			@echo "ARG='$$'(jot -r -s \" \" 100 -2147483648 2147483647); ./push_swap '$$'ARG | ./checker '$$'ARG"
 
-# .PHONY: bonus
-# bonus:	fclean $(MLX) $(BOBJS)
-# 		@echo "\n\033[0;32mCompiling..."
-# 		$(MAKE) -C ./libft
-# 		$(MAKE) -C ./minilibx-linux
-# 		cp ./minilibx-linux/libmlx_Linux.a .
-# 		cp ./libft/libft.a .
-# 		$(CC) ${BOBJS} libmlx_Linux.a libft.a $(CFLAGS) $(LXFLAGS) -o ${NAME}
-# 		@echo "Complete\033[0m"
+tester	:	## Download tester
+			git clone git@github.com:nafuka11/push_swap_tester.git
+
+.PHONY: help
+help	: ## Display this help
+	@grep -E '^[a-zA-Z1-9_-]+	:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'

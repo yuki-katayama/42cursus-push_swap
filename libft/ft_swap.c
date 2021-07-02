@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kyuki <kyuki@student.42tokyo.js>           +#+  +:+       +#+        */
+/*   By: kyuki <kyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 06:43:27 by kyuki             #+#    #+#             */
-/*   Updated: 2020/08/10 19:05:17 by kyuki            ###   ########.fr       */
+/*   Updated: 2021/06/27 12:56:59 by kyuki            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
-	int tmp;
+	int	tmp;
 
 	tmp = *a;
 	*a = *b;
