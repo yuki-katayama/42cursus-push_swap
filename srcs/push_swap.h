@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kyuki <kyuki@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/05 12:44:09 by kyuki             #+#    #+#             */
+/*   Updated: 2021/07/05 12:44:14 by kyuki            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdio.h>
@@ -97,7 +109,6 @@ void	ft_start_push_swap(t_list **stack_a, int size);
 
 //median
 int		ft_get_median(t_list *stack_a, int n, int minus);
-// int		ft_get_m_median(t_list *stack_a, int n);
 
 //split_median
 int		ft_split_median_a(t_list **stack_a, t_list **stack_b, int size);
